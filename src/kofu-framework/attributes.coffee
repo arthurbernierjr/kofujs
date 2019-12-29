@@ -1,4 +1,4 @@
-import reduce from 'lodash.reduce'
+import { fu } from '../kofu-utilities/index.js'
 
 reducer = (acc, className) => { ...acc, [className]: true }
 
@@ -7,7 +7,7 @@ attrMapper =
       state...
       class: {
         state.class...
-        reduce(classNames.split(" "), reducer, {})...
+        fu.reduce(classNames.split(" "), reducer, {})...
         }
       })
   onClick: (state, click) => ({state..., on: {state.on..., click}})

@@ -1,14 +1,22 @@
 {
   "presets": [
-    "env"
+    "@babel/preset-env"
   ],
   "plugins": [
-    "transform-object-rest-spread",
+    "@babel/plugin-proposal-object-rest-spread",
     [
-      "transform-react-jsx",
+      "@babel/plugin-transform-react-jsx",
       {
         "pragma": "h"
       }
-    ]
+    ],
+    ["@babel/plugin-proposal-decorators", {
+      "legacy": true
+    }],
+    ["@babel/plugin-proposal-class-properties", {
+      "loose": true
+    }],
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-transform-async-to-generator"
   ]
 }

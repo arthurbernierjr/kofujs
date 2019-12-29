@@ -1,10 +1,10 @@
 import h from "snabbdom/h";
-import { computeAttrs } from "./attributes";
+import { computeAttrs } from "./attributes.js";
 
 
 export createComponent = (Component, attrs, children) =>
-  snabbdomChildren = children.filter(child -> typeof child != "string")
-  stringChildren = children.filter(child -> typeof child == "string").join("")
+  snabbdomChildren = children.filter((child) => typeof child != "string")
+  stringChildren = children.filter((child) => typeof child == "string").join("")
   component= new Component({
     children: stringChildren
     attrs...
@@ -13,7 +13,7 @@ export createComponent = (Component, attrs, children) =>
   rendered.children = rendered.children.concat(snabbdomChildren)
 
   component.currentNode = rendered
-  if component.componentDidMount then component.componentDidMount()
+  if component.komponentDidMount then component.komponentDidMount()
   rendered
 
 export createElement = (tagName, attrs, children...) =>
