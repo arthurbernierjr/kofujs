@@ -1,6 +1,9 @@
 # Kofujs
 KofuJS a slightly opinionated and elegant JS framework
 
+## Live demo
+  - [__Kofu Demo__](https://kofujs-demo.herokuapp.com/)
+
 ## Frontend Framework using
 
   - Virtual Dom with Snabbdom
