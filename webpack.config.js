@@ -14,7 +14,7 @@ module.exports = env => {
       framework:'./lib/kofu-framework/index.js'
     },
     output: {
-      path: path.resolve(__dirname, 'public'),
+      path: path.resolve(__dirname, 'public/js'),
       filename:'[name].[chunkhash].js'
     },
     module: {
@@ -32,9 +32,9 @@ module.exports = env => {
       ]
     },
     plugins:[
-      new CleanWebpackPlugin('public', {}),
+      new CleanWebpackPlugin('public/js', {}),
       new WebpackMd5Hash(),
-      new HtmlWebpackPlugin({ template: './src/templates/index.html' })
+      new HtmlWebpackPlugin({ template: './src/templates/template.html', filename: '../index.html' })
     ]
   }
 }

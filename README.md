@@ -38,3 +38,14 @@ Goal is to be able to make it so it works like NUXT or NEXT out of the box with 
     - Integrate JSS
     - Integrate Lodash Natively by exposing map, reduce and filter to every component
     - Set up RXJS
+# Getting started
+  ``` bash
+  git clone git@github.com:arthurbernierjr/kofujs.git
+  cd kofujs
+  ```
+  ``` bash
+  npm i -g gulp-cli
+  ```
+  ``` bash
+  npm i
+  ```
