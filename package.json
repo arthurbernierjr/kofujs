@@ -7,7 +7,8 @@
     "build:fw": "webpack --mode development --env.NODE_ENV=dev",
     "build:webpack": "webpack --mode production --env.NODE_ENV=prod",
     "watch": "gulp",
-    "compile": "gulp coffee"
+    "compile": "gulp coffee",
+    "start": "gulp start"
   },
   "repository": {
     "type": "git",

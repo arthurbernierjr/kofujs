@@ -74,7 +74,7 @@ export class HelloWorld extends Komponent {
       <div className="main main-raised">
         <div className="container">
           <div className="section text-center">
-            <h2 className="title">KOFU JS Concept Page</h2>
+            <h2 className="title">KofuJS Concept Page</h2>
           </div>
         </div>
       </div>
@@ -83,8 +83,8 @@ export class HelloWorld extends Komponent {
           <nav className="float-left">
             <ul>
               <li>
-                <a href="https://www.creative-tim.com/">
-                  Creative Tim
+                <a href="https://kofujs.io/">
+                  Built with KofuJS
                 </a>
               </li>
             </ul>

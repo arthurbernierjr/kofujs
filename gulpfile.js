@@ -11,7 +11,7 @@ yarn watch or npm run watch
 */
 gulp.task('default', cb => {
   consola.info('Starting to build files')
-  exec('yarn build:fw', function(err, stdout, stderr) {
+  exec('npm run build:fw', function(err, stdout, stderr) {
 		console.log(stdout);
 		console.log(stderr);
 		cb(err);
@@ -71,3 +71,23 @@ gulp.task('build', cb => {
 	});
   cb();
 });
+
+gulp.task('start', cb => {
+  consola.info('Starting to build files');
+  exec('npm run build:webpack', function(err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    cb(err);
+  }).on('complete', ( ) => {
+    return consola.success('Completed Awesome !!!')
+  })
+
+  consola.info('Serving Site');
+  exec('coffee deployment.coffee', function(err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    cb(err);
+  });
+  consola.success('Awesome')
+  cb();
+})
