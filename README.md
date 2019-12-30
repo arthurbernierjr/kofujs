@@ -12,7 +12,6 @@ KofuJS a slightly opinionated and elegant JS framework
   - CSS-in-JS
   - Lodash
   - RXJS ( The whole point is out of box Observables from the ground up)
-  - Perhaps Redux
 
 ## Starter Kit Contains
 	- Kofu
