@@ -49,3 +49,7 @@ Goal is to be able to make it so it works like NUXT or NEXT out of the box with 
   ``` bash
   npm i
   ```
+  ```bash
+  npm run compile
+  npm run watch
+  ```
