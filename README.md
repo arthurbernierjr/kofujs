@@ -221,3 +221,5 @@ Coming Soon .kofu files with templates
   npm run compile
   npm run watch
   ```
+## Credits
+- Demo uses Custom Bootstrap 4 theme created by [__Creative Tim __](https://creative-tim.com)
