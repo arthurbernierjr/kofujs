@@ -6,7 +6,9 @@ const reload = browserSync.reload
 const nodemon = require("gulp-nodemon")
 const exec = require('child_process').exec
 
-
+/* Default Task Called when you run
+yarn watch or npm run watch
+*/
 gulp.task('default', cb => {
   consola.info('Starting to build files')
   exec('yarn build:fw', function(err, stdout, stderr) {
@@ -32,8 +34,13 @@ gulp.task('default', cb => {
    consola.info('Front End Listening')
    consola.success('App Set Up')
 
-   gulp.watch('./src/example/**/*', gulp.task('build'))
-      gulp.watch([
+   gulp.watch('./src/example/**/*', gulp.task('build')).on('change', (file) => {
+     consola.success('Reloaded due to change')
+     console.log(file)
+     return reload()
+   });
+
+   gulp.watch([
         './public/**/*',
         './public/*',
         './src/**/*'
@@ -42,9 +49,12 @@ gulp.task('default', cb => {
      console.log(file)
      return reload()
    });
+
   cb();
 })
-
+/*
+End Default task
+*/
 gulp.task('coffee', cb => {
   gulp.src('./src/**/*.coffee')
     .pipe(coffee({bare: true}))

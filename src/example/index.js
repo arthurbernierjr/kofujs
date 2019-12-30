@@ -17,6 +17,7 @@ export class HelloWorld extends Komponent {
   }
   handleClick() {
     console.log('hi')
+    alert('On Click Works')
   }
 
   render() {
@@ -35,7 +36,9 @@ export class HelloWorld extends Komponent {
             <div className="navbar-translate">
               <a className="navbar-brand" href="#">
               KofuJS </a>
-              <button className="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+              <button className="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation"
+              onClick={this.handleClick}
+              >
                 <span className="sr-only">Toggle navigation</span>
                 <span className="navbar-toggler-icon"></span>
                 <span className="navbar-toggler-icon"></span>
@@ -88,10 +91,8 @@ export class HelloWorld extends Komponent {
           </nav>
           <div className="copyright float-right">
             &copy;
-            <script>
-              document.write(new Date().getFullYear())
-            </script>, made with <i class="material-icons">favorite</i> by
-            <a href="https://arthurbernierjr.com/" target="blank">Arthur Bernier Jr</a> for a better web.
+              { new Date().getFullYear() }, made with <i className="material-icons">favorite</i> by{' '}
+            <a href="https://arthurbernierjr.com/" target="blank">Arthur Bernier Jr.</a> for a better web.
           </div>
         </div>
         </footer>
