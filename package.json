@@ -1,6 +1,6 @@
 {
   "name": "kofujs",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "KofuJS a slightly opinionated and elegant JS framework",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,16 @@
     "url": "https://github.com/arthurbernierjr/kofujs/issues"
   },
   "homepage": "https://github.com/arthurbernierjr/kofujs#readme",
+  "dependencies": {
+    "jss": "^10.0.1",
+    "jss-preset-default": "^10.0.1",
+    "lodash.filter": "^4.6.0",
+    "lodash.map": "^4.6.0",
+    "lodash.reduce": "^4.6.0",
+    "rxjs": "^6.5.3",
+    "snabbdom": "^0.7.4",
+    "color": "^3.1.2"
+  },
   "devDependencies": {
     "@babel/core": "^7.7.7",
     "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
@@ -28,18 +38,10 @@
     "@babel/preset-env": "^7.7.7",
     "babel-loader": "^8.0.6",
     "coffeescript": "^2.4.1",
-    "color": "^3.1.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "jss": "^10.0.1",
-    "jss-preset-default": "^10.0.1",
     "koa": "^2.11.0",
     "koa-router": "^7.4.0",
-    "lodash.filter": "^4.6.0",
-    "lodash.map": "^4.6.0",
-    "lodash.reduce": "^4.6.0",
-    "rxjs": "^6.5.3",
-    "snabbdom": "^0.7.4",
     "vanilla-router": "^1.2.7",
     "@babel/plugin-proposal-class-properties": "^7.7.4",
     "@babel/plugin-proposal-decorators": "^7.7.4",
