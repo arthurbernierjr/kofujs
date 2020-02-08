@@ -1,6 +1,6 @@
 {
   "name": "kofujs",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "KofuJS a slightly opinionated and elegant JS framework",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,7 @@
     "url": "https://github.com/arthurbernierjr/kofujs/issues"
   },
   "homepage": "https://github.com/arthurbernierjr/kofujs#readme",
+  "bundleDependencies": true,
   "dependencies": {
     "jss": "^10.0.1",
     "jss-preset-default": "^10.0.1",
