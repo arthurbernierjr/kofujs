@@ -8,7 +8,7 @@ from './lib/kofu-framework/index.js'
 
 import {
   createElement
-} from ".lib/kofu-framework/element.js";
+} from "./lib/kofu-framework/element.js";
 
 global.h = createElement;
 export {
