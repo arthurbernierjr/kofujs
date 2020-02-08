@@ -93,10 +93,6 @@ Goal is to be able to make it so it works like NUXT or NEXT out of the box with 
 
 ```JavaScript
 
-/* Simple JSS Integration */
-import jss from 'jss'
-import preset from 'jss-preset-default'
-import color from 'color'
 import {
   Komponent,
   render
@@ -105,26 +101,38 @@ import {
 export class HelloWorld extends Komponent {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this)
-  }
-
-  komponentDidMount () {
-    console.log('up')
-  }
-  handleClick() {
-    console.log('hi')
-    alert('On Click Works')
-  }
-
-  render() {
-    jss.setup(preset())
-
     const styles = {
       mainHeader : {
         backgroundImage: `url('/assets/img/bg3.jpg')`
       }
     }
-    const {classes} = jss.createStyleSheet(styles).attach()
+    // Adds the created CSS Classes to this
+    // JSS is installed by default and can be used with the this.setStyles function
+    const { classes } = this.setStyles(styles)
+    this.classes = classes
+    // User this.state or this.data or both
+    this.state = {
+      reactive: " this data must be updated with SetState"
+    }
+    this.data = {
+      unReactive: "this is available also and this will be just an object and previous data is unreachable after a key is overwritten"
+    }
+    // Bind Functions if necessary
+    this.handleClick = this.handleClick.bind(this)
+  }
+  komponentGenesis(){
+    console.log('genesis')
+  }
+  komponentDidMount () {
+    console.log('mounted')
+  }
+  handleClick() {
+    console.log('hi')
+    alert('On Click Works')
+  }
+// This is where you put the jsx that you want to render or present it is called present so that it doesn't get confused by the render method outsided the class
+  present() {
+    console.log('rendering')
     return (
       <div>
         <nav className="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg" color-on-scroll="100">
@@ -153,7 +161,7 @@ export class HelloWorld extends Komponent {
         </div>
       </nav>
       <div
-        className={`page-header header-filter ${classes.mainHeader}`}
+        className={`page-header header-filter ${this.classes.mainHeader}`}
         data-parallax="true"
         >
         <div className="container">
@@ -200,9 +208,21 @@ export class HelloWorld extends Komponent {
 
 render(<HelloWorld />, document.getElementById("app"));
 
+
 ```
 ```
+Not listed but included : import {ko} in your file and you can use all Rx.js methods ko contains all rx js methods, import {fu} and a simple utilities are included
+export var fu = {
+  map: map, // lodash map
+  filter: filter, // lodash filter
+  reduce: reduce, // lodash reduce
+  css: jss, // jss is exported as fu.css
+  preset: preset, // jss preset default
+  color: color // color npm package
+};
+
 Coming Soon .kofu files with templates
+Computed properties coming soon
 ```
 
 
