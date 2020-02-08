@@ -1,6 +1,6 @@
 {
   "name": "kofujs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "KofuJS a slightly opinionated and elegant JS framework",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
     "url": "https://github.com/arthurbernierjr/kofujs/issues"
   },
   "homepage": "https://github.com/arthurbernierjr/kofujs#readme",
-  "dependencies": {
+  "devDependencies": {
     "@babel/core": "^7.7.7",
     "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
     "@babel/plugin-transform-react-jsx": "^7.7.7",
