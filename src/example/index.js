@@ -1,6 +1,3 @@
-import jss from 'jss'
-import preset from 'jss-preset-default'
-import color from 'color'
 import {
   Komponent,
   render
@@ -9,26 +6,37 @@ import {
 export class HelloWorld extends Komponent {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this)
-  }
-
-  komponentDidMount () {
-    console.log('up')
-  }
-  handleClick() {
-    console.log('hi')
-    alert('On Click Works')
-  }
-
-  render() {
-    jss.setup(preset())
-
     const styles = {
       mainHeader : {
         backgroundImage: `url('/assets/img/bg3.jpg')`
       }
     }
-    const {classes} = jss.createStyleSheet(styles).attach()
+    // Adds the created CSS Classes to this
+    const { classes } = this.setStyles(styles)
+    this.classes = classes
+    // User this.state or this.data or both
+    this.state = {
+      reactive: " this data must be updated with SetState"
+    }
+    this.data = {
+      unReactive: "this is available also and this will be just an object and previous data is unreachable after a key is overwritten"
+    }
+    // Bind Functions if necessary
+    this.handleClick = this.handleClick.bind(this)
+  }
+  komponentGenesis(){
+    console.log('genesis')
+  }
+  komponentDidMount () {
+    console.log('mounted')
+  }
+  handleClick() {
+    console.log('hi')
+    alert('On Click Works')
+  }
+// This is where you put the jsx that you want to render or present it is called present so that it doesn't get confused by the render method outsided the class
+  present() {
+    console.log('rendering')
     return (
       <div>
         <nav className="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg" color-on-scroll="100">
@@ -57,7 +65,7 @@ export class HelloWorld extends Komponent {
         </div>
       </nav>
       <div
-        className={`page-header header-filter ${classes.mainHeader}`}
+        className={`page-header header-filter ${this.classes.mainHeader}`}
         data-parallax="true"
         >
         <div className="container">

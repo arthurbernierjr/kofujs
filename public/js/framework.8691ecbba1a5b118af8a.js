@@ -1,6 +1,3 @@
-/*
-export all things needed for node module
-*/
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
