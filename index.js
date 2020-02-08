@@ -11,10 +11,12 @@ import {
 } from "./lib/kofu-framework/element.js";
 
 global.h = createElement;
+const h = createElement;
 export {
   Komponent,
   render,
   patch,
   ko,
-  fu
+  fu,
+  h
 };
