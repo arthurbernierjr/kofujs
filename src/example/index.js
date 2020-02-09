@@ -1,16 +1,17 @@
 import {
   Komponent,
   render
-} from "../../lib/kofu-framework/index.js";
+} from "../../index.js";
 
+const styles = {
+  mainHeader : {
+    backgroundImage: `url('/assets/img/bg3.jpg')`
+  }
+}
 export class HelloWorld extends Komponent {
   constructor(props) {
     super(props);
-    const styles = {
-      mainHeader : {
-        backgroundImage: `url('/assets/img/bg3.jpg')`
-      }
-    }
+
     // Adds the created CSS Classes to this
     const { classes } = this.setStyles(styles)
     this.classes = classes
@@ -44,7 +45,7 @@ export class HelloWorld extends Komponent {
             <div className="navbar-translate">
               <a className="navbar-brand" href="#">
               KofuJS </a>
-              <button className="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation"
+              <button className="navbar-toggler" type="button"
               onClick={this.handleClick}
               >
                 <span className="sr-only">Toggle navigation</span>
@@ -56,7 +57,7 @@ export class HelloWorld extends Komponent {
           <div className="collapse navbar-collapse">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <a href="#" className="nav-link">
+                <a href="#" className="nav-link" onClick={this.handleClick}>
                   <i className="material-icons">apps</i> Template
                 </a>
               </li>
@@ -109,5 +110,7 @@ export class HelloWorld extends Komponent {
   }
 
 };
+
+global.computed = HelloWorld
 
 render(<HelloWorld />, document.getElementById("app"));

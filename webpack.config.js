@@ -10,8 +10,8 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 module.exports = env => {
   return {
     entry: {
-      App: './src/example/index.js',
-      framework:'./lib/kofu-framework/index.js'
+      example: './src/example/index.js',
+      kofujs: './index.js'
     },
     output: {
       path: path.resolve(__dirname, 'public/js'),
