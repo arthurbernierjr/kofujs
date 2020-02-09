@@ -1,6 +1,7 @@
 public
 src
-
+lib
+*.coffee
 
 # Logs
 logs
