@@ -1,5 +1,21 @@
 # Kofujs
+![kofulogo](https://user-images.githubusercontent.com/38284764/74117680-78a4f980-4b86-11ea-9e8c-fc42cc1a676a.png)
 KofuJS a slightly opinionated and elegant JS framework
+
+## Use Kofu in your app
+  - If you want to use the official Kofu starter app
+```
+      npm i -g create-kofujs-app gulp-cli yarn
+```
+  - If you want to create your own app from scratch create an npm project and run
+  ```
+      yarn add kofujs
+  ```
+  ### or
+  ```
+      npm i kofujs
+  ```
+
 
 ## Live demo
   - [__Kofu Demo__](https://kofujs-demo.herokuapp.com/)
@@ -7,54 +23,26 @@ KofuJS a slightly opinionated and elegant JS framework
 ## Frontend Framework using
 
   - Virtual Dom with Snabbdom
-  - Coffescript to force a Syntax
   - JSX
   - CSS-in-JS
-  - Lodash
+  - Lodash ( map , filter and reduce)
   - RXJS ( The whole point is out of box Observables from the ground up)
 
 ## Starter Kit Contains
-	- Kofu
+	- KofuJS
 	- Vanilla Router
 	- Webpack
 	- BrowserSync
 	- Babel
 	- Gulp
-	- Gulp-Coffee
 	- Gulp-Nodemon
-	- Express (need to set it up where you can add routers on the backend via middleware that is automatically added)
 
+## Usage information
+```
+The `ko` object contains rxjs and will be further filtered down used to use Observables for Application Stae Management
+The `fu`  object contains map, filter and reduce from lodash as well as the jss library for css in jss but note: CSS In JS is built into the Komponent class with the setStyles method
+```
 
-Goal is to be able to make it so it works like NUXT or NEXT out of the box with the Starter Kit but it could also be used as a mere SPA with using just Kofu.js and Vanilla Router
-  todo : fork Vanilla Router and make Kofu Router
-
-## Project Reason
-    - Academic pursuit as a faculty member
-    - Main purpose is to show students inner workings of FrontEnd / Full Satck Frameworks
-    - Secondary Purpose is for usage with Freelance Projects
-    - Third purpose is that maybe someone will love the project and use it for their own projects and hopefully help make it better
-## Timeline to Beta
-    - Hopeful Beta is May 22 2020
-## Resources and Inspiration
-  - Evan You and VueJS
-  - Jose Santos Garcia Web Developer Starter kit
-  - Marvin Frachet Create a FrontEnd Framework
-  - Jafar Husain (ASYNC with RXJS)
-  - Sean Larkin (Webpack)
-  - Kyle Simpson (Getify)
-  - Brad Traversy
-  - Stephen Grider
-  - Colt Steele
-## todo
-    - Create a build chain and dev server setup with Gulp, Webpack, Express, Nodemon and BrowserSync
-    - Integrate JSS
-    - Integrate Lodash Natively by exposing map, reduce and filter to every component
-    - Set up RXJS
-## Why?
-  - There are things I love about React and Things I love about Vue and things I love about Nuxt.js
-  - I want this project to be a true framework that includes a Router, State Management, Isomorphic Behavior, and Component Library out of the box
-  - It also needs to be easy to use only what you need
-  - I want to make this the framework you might turn to if you really want to build an application with rxjs
 ## What is in it Now
 ```JavaScript
   /*Komponent*/
@@ -62,7 +50,7 @@ Goal is to be able to make it so it works like NUXT or NEXT out of the box with 
   import {
     Komponent,
     render
-  } from "../../lib/kofu-framework/index.js";
+  } from "kofujs";
 
   export class HelloWorld extends Komponent {
     constructor(props) {
@@ -96,7 +84,7 @@ Goal is to be able to make it so it works like NUXT or NEXT out of the box with 
 import {
   Komponent,
   render
-} from "../../lib/kofu-framework/index.js";
+} from "kofujs";
 
 export class HelloWorld extends Komponent {
   constructor(props) {
@@ -226,7 +214,7 @@ Computed properties coming soon
 ```
 
 
-# Getting started
+# Getting started developing
   ``` bash
   git clone git@github.com:arthurbernierjr/kofujs.git
   cd kofujs
@@ -243,3 +231,36 @@ Computed properties coming soon
   ```
 ## Credits
 - Demo uses Custom Bootstrap 4 theme created by [__Creative Tim__](https://creative-tim.com)
+
+
+
+Goal is to be able to make it so it works like NUXT or NEXT out of the box with the Starter Kit but it could also be used as a mere SPA with using just Kofu.js and Vanilla Router
+  todo : fork Vanilla Router and make Kofu Router
+
+## Project Reason
+    - Academic pursuit as a faculty member
+    - Main purpose is to show students inner workings of FrontEnd / Full Satck Frameworks
+    - Secondary Purpose is for usage with Freelance Projects
+    - Third purpose is that maybe someone will love the project and use it for their own projects and hopefully help make it better
+## Timeline to Beta
+    - Hopeful Beta is May 22 2020
+## Resources and Inspiration
+  - Evan You and VueJS
+  - Jose Santos Garcia Web Developer Starter kit
+  - Marvin Frachet Create a FrontEnd Framework
+  - Jafar Husain (ASYNC with RXJS)
+  - Sean Larkin (Webpack)
+  - Kyle Simpson (Getify)
+  - Brad Traversy
+  - Stephen Grider
+  - Colt Steele
+## todo
+    - Create a build chain and dev server setup with Gulp, Webpack, Express, Nodemon and BrowserSync (Done)
+    - Integrate JSS (Done)
+    - Integrate Lodash Natively by exposing map, reduce and filter to every component (done)
+    - Set up RXJS
+## Why?
+  - There are things I love about React and Things I love about Vue and things I love about Nuxt.js
+  - I want this project to be a true framework that includes a Router, State Management, Isomorphic Behavior, and Component Library out of the box
+  - It also needs to be easy to use only what you need
+  - I want to make this the framework you might turn to if you really want to build an application with rxjs
