@@ -39,16 +39,17 @@ module.exports = env => {
   return {
     mode: 'production',
     entry: {
-      index: './kofu.js'
+      index: './lib/kofu-framework/index.js'
     },
     output: {
       path: path.resolve(__dirname),
-      filename:'[name].js'
+      filename:'webpacked.js'
     },
     module: {
       rules: [
         {
               test: /\.js$/,
+              include: /(node_modules)/,
               use: {
                 loader: 'babel-loader',
                 options: {

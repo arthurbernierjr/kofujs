@@ -1,16 +1,17 @@
 {
   "name": "kofujs",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "KofuJS a slightly opinionated and elegant JS framework",
   "main": "index.js",
   "scripts": {
     "build:fw": "webpack --mode development --env.NODE_ENV=dev",
-    "build:webpack": "webpack --mode production --env.NODE_ENV=prod",
+    "build": "webpack --mode production --env.NODE_ENV=prod",
     "watch": "gulp",
     "compile": "gulp coffee",
     "start": "gulp start",
     "standard": "git add . && git commit -am \" Minor Updates\" && git push origin master",
-    "release": "rollup framework.js --file index.js --format umd --name \"myBundle\" && npm publish"
+    "pre": "rollup framework.js --file index.js --format umd --name \"myBundle\"",
+    "release": " npm run pre && npm publish"
   },
   "repository": {
     "type": "git",
