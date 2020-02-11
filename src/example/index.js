@@ -1,7 +1,7 @@
 import {
   Komponent,
   render
-} from "../../index.js";
+} from "../../lib/kofu-framework/index.js";
 
 const styles = {
   mainHeader : {
@@ -66,6 +66,7 @@ export class HelloWorld extends Komponent {
         </div>
       </nav>
       <div
+      id="main"
         className={`page-header header-filter ${this.classes.mainHeader}`}
         data-parallax="true"
         >
@@ -84,6 +85,9 @@ export class HelloWorld extends Komponent {
         <div className="container">
           <div className="section text-center">
             <h2 className="title">KofuJS Concept Page</h2>
+            <form>
+            <input type="text" name="love" glass/>
+            </form>
           </div>
         </div>
       </div>

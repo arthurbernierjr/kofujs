@@ -9,6 +9,7 @@
     "watch": "gulp",
     "compile": "gulp coffee",
     "start": "gulp start",
+    "standard": "git add . && git commit -am \" Minor Updates\" && git push origin master",
     "release": "rollup framework.js --file index.js --format umd --name \"myBundle\" && npm publish"
   },
   "repository": {
