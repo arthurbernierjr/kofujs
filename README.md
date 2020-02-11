@@ -1,6 +1,6 @@
 # Kofujs
 ![kofulogo](https://user-images.githubusercontent.com/38284764/74117680-78a4f980-4b86-11ea-9e8c-fc42cc1a676a.png)
-KofuJS a slightly opinionated and elegant JS framework
+#### KofuJS a slightly opinionated and elegant JS framework
 
 ## Use Kofu in your app
   - If you want to use the official Kofu starter app
@@ -19,6 +19,9 @@ KofuJS a slightly opinionated and elegant JS framework
 
 ## Live demo
   - [__Kofu Demo__](https://kofujs-demo.herokuapp.com/)
+  
+## Starter Generator (a la create-react-app )
+  - [__Create-KofuJS-APP__](https://github.com/arthurbernierjr/create-kofujs-app)
 
 ## Frontend Framework using
 
