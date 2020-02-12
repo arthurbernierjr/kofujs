@@ -214,19 +214,32 @@
       class: computed.class,
       on: computed.on,
       attrs: computed.attrs,
+      props: computed.attrs,
       dataset: computed.dataset
      };
     return computedAttributesObject
   };
 
   var createKomponent = (Komponent, attrs, children) => {
-    var komponent, rendered, snabbdomChildren, stringChildren;
+    var komponent, rendered, snabbdomChildren, stringChildren, arrayChildren, arrayChildrenStrings, arrayChildrenSnabbdom;
+
     snabbdomChildren = children.filter((child) => {
       return typeof child !== "string";
     });
     stringChildren = children.filter((child) => {
       return typeof child === "string";
     }).join("");
+    arrayChildren = children.filter((child) =>  {
+      return Array.isArray(child)
+    });
+    arrayChildrenStrings = arrayChildren.filter((child) => {
+      return typeof child === "string"
+    }).join("");
+    arrayChildrenSnabbdom = arrayChildren.filter((child) =>  {
+      return typeof child !== "string"
+    });
+    stringChildren = stringChildren + arrayChildrenStrings;
+    snabbdomChildren = [...snabbdomChildren, ...arrayChildrenSnabbdom];
     komponent = new Komponent({
       children: stringChildren,
       ...attrs
@@ -250,9 +263,39 @@
       return h$2(tagName, computeAttrs(attrs || {}), children);
     }
   };
+  var mapElements = (array, callback) => {
+    var nodeList = array.map(callback);
+    var div = h$2('div');
+    var children = nodeList.map((item)=>{
+        if (item && item.sel !== undefined) {
+          return  {
+            text: item.text,
+            sel: item.sel,
+            data: item.data,
+            children: item.children,
+            elm: item.elm,
+            key: item.key
+          }
+      } else if (item.text) {
+        return  {
+          text: item.text,
+          sel: undefined,
+          data: undefined,
+          children: undefined,
+          elm: undefined,
+          key: undefined
+        }
+      }
+      return null
+    });
+    children = children.filter((item)=> item !== null);
+    div.children = children;
+    return div
+  };
 
   const h = createElement;
   global.h = h;
+  fu.mapElements = mapElements;
 
   exports.render = (RootKomponent, rootElement) => {
     return exports.patch(rootElement, RootKomponent);

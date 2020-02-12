@@ -19,7 +19,7 @@
 
 ## Live demo
   - [__Kofu Demo__](https://kofujs-demo.herokuapp.com/)
-  
+
 ## Starter Generator (a la create-react-app )
   - [__Create-KofuJS-APP__](https://github.com/arthurbernierjr/create-kofujs-app)
 
@@ -199,6 +199,50 @@ export class HelloWorld extends Komponent {
 
 render(<HelloWorld />, document.getElementById("app"));
 
+
+```
+```JavaScript
+import { Komponent , render, fu} from '../../kofujs'
+
+/*  Using fu.mapElements to display data from a list*/
+
+const styles = {
+  mainPageHeading: {
+    backgroundColor: 'red'
+  }
+}
+
+class Child extends Komponent {
+  constructor (props)  {
+    super (props)
+  }
+  present () {
+    return( <h3>I am a child</h3>)
+  }
+}
+
+class Example extends Komponent{
+  constructor (props)  {
+    super (props)
+    this.classes = this.setStyles(styles).classes
+  }
+
+  komponentDidMount () {
+    console.log('Hello world')
+  }
+    present () {
+    const g = [1,2,3,4,5]
+
+    return (
+        <div>
+        <h1 className={`${this.classes.mainPageHeading}`}> Hello World</h1>
+          <div>{fu.mapElements( g, (item, i) => <li><Child /></li>)}</div>
+        </div>
+    )
+  }
+}
+
+render(<Example />, document.getElementById('app'))
 
 ```
 ```
