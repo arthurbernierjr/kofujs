@@ -46,7 +46,7 @@
     setState(nextState) {
       this.state = {...this.state, ...nextState};
       this.prevNode = this.currentNode;
-      this.currentNode = this.render();
+      this.currentNode = this.present();
       exports.patch(this.prevNode, this.currentNode);
     }
 
