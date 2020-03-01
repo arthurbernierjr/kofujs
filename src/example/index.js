@@ -1,7 +1,7 @@
 import {
   Komponent,
   render
-} from "../../lib/kofu-framework/index.js";
+} from "../../index.js";
 
 const styles = {
   mainHeader : {
@@ -34,6 +34,14 @@ export class HelloWorld extends Komponent {
   handleClick() {
     console.log('hi')
     alert('On Click Works')
+    this.setState({test: 'works'})
+    console.log(this.state)
+  }
+  komponentResurrection() {
+    console.log('i should run each time the component gets represented only mutate state once here because that starts a second update which will lead to infinite calls SET STATE SHOULD ONLY ONE ONCE IN RESURRECTION IF EVER AT ALL, Use this.data')
+    this.mergeStateWithData({test: 'works1'})
+    this.mergeStateWithData({test: 'works2'})
+    this.mergeStateWithData({test: 'works99'})
   }
 // This is where you put the jsx that you want to render or present it is called present so that it doesn't get confused by the render method outsided the class
   present() {
