@@ -2,6 +2,8 @@ public
 src
 *.coffee
 framework.js
+lib
+public
 gulpfile.js
 # Logs
 logs
