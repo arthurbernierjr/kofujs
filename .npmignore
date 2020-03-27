@@ -1,7 +1,8 @@
 public
 src
 *.coffee
-
+framework.js
+gulpfile.js
 # Logs
 logs
 *.log

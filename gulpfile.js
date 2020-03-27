@@ -6,13 +6,6 @@ const reload = browserSync.reload
 const nodemon = require("gulp-nodemon")
 const exec = require('child_process').exec
 const fs = require('fs');
-const concat = require('gulp-concat');
-
-gulp.task('scripts', function() {
-  return gulp.src('./lib/**/*.js')
-    .pipe(concat('index.js'))
-    .pipe(gulp.dest('./dist/'));
-});
 
 /* Default Task Called when you run
 yarn watch or npm run watch

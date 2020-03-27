@@ -11,7 +11,6 @@ const styles = {
 export class HelloWorld extends Komponent {
   constructor(props) {
     super(props);
-
     // Adds the created CSS Classes to this
     const { classes } = this.setStyles(styles)
     this.classes = classes

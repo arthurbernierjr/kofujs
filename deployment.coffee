@@ -1,5 +1,3 @@
-require "dotenv"
-  .config()
 express = require "express"
 path = require "path"
 

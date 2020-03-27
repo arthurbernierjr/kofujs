@@ -4,18 +4,18 @@
   (global = global || self, factory(global.myBundle = {}, global.snabbdom, global.classModule, global.eventModule, global.propsModule, global.dataSetModule, global.attributeModule, global.rx, global.map, global.filter, global.reduce, global.jss, global.preset, global.color, global.h$2));
 }(this, (function (exports, snabbdom, classModule, eventModule, propsModule, dataSetModule, attributeModule, rx, map, filter, reduce, jss, preset, color, h$2) { 'use strict';
 
-  classModule = classModule && classModule.hasOwnProperty('default') ? classModule['default'] : classModule;
-  eventModule = eventModule && eventModule.hasOwnProperty('default') ? eventModule['default'] : eventModule;
-  propsModule = propsModule && propsModule.hasOwnProperty('default') ? propsModule['default'] : propsModule;
-  dataSetModule = dataSetModule && dataSetModule.hasOwnProperty('default') ? dataSetModule['default'] : dataSetModule;
-  attributeModule = attributeModule && attributeModule.hasOwnProperty('default') ? attributeModule['default'] : attributeModule;
-  map = map && map.hasOwnProperty('default') ? map['default'] : map;
-  filter = filter && filter.hasOwnProperty('default') ? filter['default'] : filter;
-  reduce = reduce && reduce.hasOwnProperty('default') ? reduce['default'] : reduce;
-  jss = jss && jss.hasOwnProperty('default') ? jss['default'] : jss;
-  preset = preset && preset.hasOwnProperty('default') ? preset['default'] : preset;
-  color = color && color.hasOwnProperty('default') ? color['default'] : color;
-  h$2 = h$2 && h$2.hasOwnProperty('default') ? h$2['default'] : h$2;
+  classModule = classModule && Object.prototype.hasOwnProperty.call(classModule, 'default') ? classModule['default'] : classModule;
+  eventModule = eventModule && Object.prototype.hasOwnProperty.call(eventModule, 'default') ? eventModule['default'] : eventModule;
+  propsModule = propsModule && Object.prototype.hasOwnProperty.call(propsModule, 'default') ? propsModule['default'] : propsModule;
+  dataSetModule = dataSetModule && Object.prototype.hasOwnProperty.call(dataSetModule, 'default') ? dataSetModule['default'] : dataSetModule;
+  attributeModule = attributeModule && Object.prototype.hasOwnProperty.call(attributeModule, 'default') ? attributeModule['default'] : attributeModule;
+  map = map && Object.prototype.hasOwnProperty.call(map, 'default') ? map['default'] : map;
+  filter = filter && Object.prototype.hasOwnProperty.call(filter, 'default') ? filter['default'] : filter;
+  reduce = reduce && Object.prototype.hasOwnProperty.call(reduce, 'default') ? reduce['default'] : reduce;
+  jss = jss && Object.prototype.hasOwnProperty.call(jss, 'default') ? jss['default'] : jss;
+  preset = preset && Object.prototype.hasOwnProperty.call(preset, 'default') ? preset['default'] : preset;
+  color = color && Object.prototype.hasOwnProperty.call(color, 'default') ? color['default'] : color;
+  h$2 = h$2 && Object.prototype.hasOwnProperty.call(h$2, 'default') ? h$2['default'] : h$2;
 
   var fu = {
     map: map,
