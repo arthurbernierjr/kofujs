@@ -1,8 +1,8 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('snabbdom'), require('snabbdom/modules/class'), require('snabbdom/modules/eventlisteners'), require('snabbdom/modules/props'), require('snabbdom/modules/dataset'), require('snabbdom/modules/attributes'), require('rxjs'), require('lodash.map'), require('lodash.filter'), require('lodash.reduce'), require('jss'), require('jss-preset-default'), require('color'), require('snabbdom/h')) :
-  typeof define === 'function' && define.amd ? define(['exports', 'snabbdom', 'snabbdom/modules/class', 'snabbdom/modules/eventlisteners', 'snabbdom/modules/props', 'snabbdom/modules/dataset', 'snabbdom/modules/attributes', 'rxjs', 'lodash.map', 'lodash.filter', 'lodash.reduce', 'jss', 'jss-preset-default', 'color', 'snabbdom/h'], factory) :
-  (global = global || self, factory(global.myBundle = {}, global.snabbdom, global.classModule, global.eventModule, global.propsModule, global.dataSetModule, global.attributeModule, global.rx, global.map, global.filter, global.reduce, global.jss, global.preset, global.color, global.h$2));
-}(this, (function (exports, snabbdom, classModule, eventModule, propsModule, dataSetModule, attributeModule, rx, map, filter, reduce, jss, preset, color, h$2) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('snabbdom'), require('snabbdom/modules/class'), require('snabbdom/modules/eventlisteners'), require('snabbdom/modules/props'), require('snabbdom/modules/dataset'), require('snabbdom/modules/attributes'), require('rxjs'), require('lodash.map'), require('lodash.filter'), require('lodash.reduce'), require('jss'), require('jss-preset-default'), require('color'), require('snabbdom/h'), require('vanilla-router')) :
+  typeof define === 'function' && define.amd ? define(['exports', 'snabbdom', 'snabbdom/modules/class', 'snabbdom/modules/eventlisteners', 'snabbdom/modules/props', 'snabbdom/modules/dataset', 'snabbdom/modules/attributes', 'rxjs', 'lodash.map', 'lodash.filter', 'lodash.reduce', 'jss', 'jss-preset-default', 'color', 'snabbdom/h', 'vanilla-router'], factory) :
+  (global = global || self, factory(global.myBundle = {}, global.snabbdom, global.classModule, global.eventModule, global.propsModule, global.dataSetModule, global.attributeModule, global.rx, global.map, global.filter, global.reduce, global.jss, global.preset, global.color, global.h$2, global.Router));
+}(this, (function (exports, snabbdom, classModule, eventModule, propsModule, dataSetModule, attributeModule, rx, map, filter, reduce, jss, preset, color, h$2, Router) { 'use strict';
 
   classModule = classModule && Object.prototype.hasOwnProperty.call(classModule, 'default') ? classModule['default'] : classModule;
   eventModule = eventModule && Object.prototype.hasOwnProperty.call(eventModule, 'default') ? eventModule['default'] : eventModule;
@@ -16,6 +16,10 @@
   preset = preset && Object.prototype.hasOwnProperty.call(preset, 'default') ? preset['default'] : preset;
   color = color && Object.prototype.hasOwnProperty.call(color, 'default') ? color['default'] : color;
   h$2 = h$2 && Object.prototype.hasOwnProperty.call(h$2, 'default') ? h$2['default'] : h$2;
+  Router = Router && Object.prototype.hasOwnProperty.call(Router, 'default') ? Router['default'] : Router;
+
+  function createStore({initialState, reducer}){
+  }
 
   var fu = {
     map: map,
@@ -26,7 +30,7 @@
     color: color
   };
 
-  var ko = {...rx};
+  var ko = {...rx, createStore};
 
   exports.patch = snabbdom.init([classModule, eventModule, propsModule, attributeModule, dataSetModule]);
 
@@ -366,6 +370,50 @@
 
   exports.render = (RootKomponent, rootElement) => {
     return exports.patch(rootElement, RootKomponent);
+  };
+
+  exports.kofuRouter = function kofuRouter({routes, rootElementID, handle404, store, view}){
+    const router = new Router({
+      mode: 'history',
+      page404: function (path) {
+        if(handle404){
+          handle404(path, view.lastView);
+        }else {
+          console.log('No View');
+        }
+      }
+    });
+
+    if (store){
+      for(let route in routes ){
+        let path = route.split('/');
+        path.shift();
+        path = path.join('/');
+        router.add(path, ()=> {
+          const View = routes[route];
+          if (view.lastView === null){
+            lastView = exports.render(createElement(View,{store: store}), document.getElementById(rootElementID));
+          } else {
+            view.lastView = exports.render(createElement(View,{store: store}), view.lastView);
+          }
+        });
+      }
+    } else {
+      for(let route in routes ){
+        let path = route.split('/');
+        path.shift();
+        path = path.join('/');
+        router.add(path, ()=> {
+          const View = routes[route];
+          if (view.lastView === null){
+            view.lastView = exports.render(createElement(View), document.getElementById(rootElementID));
+          } else {
+            view.lastView = exports.render(createElement(View), view.lastView);
+          }
+        });
+      }
+    }
+    return router
   };
 
   global.h = createElement;

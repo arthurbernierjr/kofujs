@@ -5,7 +5,7 @@ import  {   Komponent,
   fu
 }
 from './lib/kofu-framework/index.js'
-
+import kofuRouter from './lib/kofu-router/index.js'
 import {
   createElement
 } from "./lib/kofu-framework/element.js";
@@ -18,5 +18,6 @@ export {
   patch,
   ko,
   fu,
-  h
+  h,
+  kofuRouter
 };
