@@ -1,6 +1,6 @@
 {
   "name": "kofujs",
-  "version": "1.1.0-alpha.6",
+  "version": "1.1.0-alpha.7",
   "description": "KofuJS a slightly opinionated and elegant JS framework",
   "main": "index.js",
   "scripts": {

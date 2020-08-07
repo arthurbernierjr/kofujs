@@ -334,9 +334,9 @@
       return h$2(tagName, computeAttrs(attrs || {}), children);
     }
   };
-  var mapElements = (array, callback) => {
+  var mapElements = (array, callback, element = 'div') => {
     var nodeList = array.map(callback);
-    var div = h$2('div');
+    var div = h$2(element);
     var children = nodeList.map((item)=>{
         if (item && item.sel !== undefined) {
           return  {
