@@ -49,7 +49,7 @@
     "gulp": "^4.0.2",
     "gulp-coffee": "^3.0.3",
     "gulp-nodemon": "^2.4.2",
-    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-plugin": "^5.5.0",
     "nodemon": "^2.0.2",
     "rollup": "^1.31.0",
     "webpack": "^4.42",
